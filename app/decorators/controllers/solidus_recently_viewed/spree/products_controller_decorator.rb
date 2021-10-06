@@ -1,6 +1,6 @@
 module SolidusRecentlyViewed
   module Spree
-    module ProductsControllerDecorator
+    module ProductControllerDecorator
       def self.prepended(base)
         base.class_eval do
           after_action :save_recently_viewed, only: :recently_viewed
