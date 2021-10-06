@@ -25,7 +25,7 @@ module SolidusRecentlyViewed
         session['recently_viewed_products'] = rvp.join(', ')
       end
 
-      ::Spree::ProductsController.prepend self
+      ::Spree::ProductController.prepend self
     end
   end
 end
