@@ -1,6 +1,6 @@
 module SolidusRecentlyViewed
   module Spree
-    module ProductControllerDecorator
+    module ProductsControllerDecorator
       def self.prepended(base)
         base.class_eval do
           after_action :save_recently_viewed, only: :recently_viewed
@@ -25,7 +25,7 @@ module SolidusRecentlyViewed
         session['recently_viewed_products'] = rvp.join(', ')
       end
 
-      ::Spree::ProductController.prepend self
+      ::Spree::ProductsController.prepend self
     end
   end
 end
